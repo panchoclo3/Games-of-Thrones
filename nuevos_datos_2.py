@@ -35,8 +35,6 @@ df = df.drop(df[df.Allegiances == "Wildling"].index)
 df.Allegiances = df.Allegiances.apply(
     lambda x: 'House ' + x if len(x.split()) < 2 else x)
 
-print(df)
-
 # Crear un diccionario para almacenar los resultados
 data = {
     'Casas Nobles': [],
@@ -62,3 +60,4 @@ for name, value in df.groupby('Allegiances'):
 result = pd.DataFrame(data)
 
 # Imprimir el resultado
+print(result)
